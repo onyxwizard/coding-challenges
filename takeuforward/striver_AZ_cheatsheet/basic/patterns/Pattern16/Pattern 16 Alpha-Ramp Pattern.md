@@ -1,0 +1,46 @@
+**Problem Statement:** Given an integer **N,** print the following pattern : 
+
+![](https://static.takeuforward.org/wp/uploads/2023/02/image-20.png)
+
+Here, N = 5.
+
+**Examples**:
+
+**Input Format**: N = 3
+**Result**: 
+A
+B B
+C C C
+
+**Input Format**: N = 6
+**Result**:   
+A 
+B B
+C C C
+D D D D
+E E E E E
+F F F F F F
+
+```java
+public class Pattern16 {  
+    public static void patternDecode(int n) {  
+        System.out.println("---------------------------------------------------");  
+        System.out.printf(" Pattern 16: Alpha-Ramp Pattern -> %d\n", n);  
+        System.out.println("--------------------------------------------------");  
+        for(int i=0;i<n;i++){  
+            for(int j =0;j<=i;j++){  
+                System.out.printf("%c ",(char) (65+i));  
+            }  
+            System.out.println();  
+        }  
+  
+  
+        System.out.println("-------------------------------------------------\n");  
+    }  
+  
+    public static void main(String[] args) {  
+        patternDecode(3);  
+        patternDecode(6);  
+    }  
+}
+```
