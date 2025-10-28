@@ -25,3 +25,4 @@ replay_pid*
 *.xml
 takeuforward/striver_AZ_cheatsheet/.idea/striver_AZ_cheatsheet.iml
 *.iml
+/takeuforward/striver_AZ_cheatsheet/out
