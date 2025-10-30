@@ -9,7 +9,6 @@ Common contexts:
 - Finding cycles in **iterative function sequences** (e.g., in Pollard's rho algorithm)
 - Solving problems like **"Find the duplicate number"** (LeetCode #287)
 
-
 ## 🧠 Core Idea: Two Pointers Moving at Different Speeds
 
 Imagine a race track with a loop:
@@ -36,6 +35,7 @@ Once they meet, reset one pointer to the start, and move **both at same speed (1
 They will meet again — **at the entrance of the cycle**.
 
 > ✅ We’ll prove why this works shortly.
+
 
 
 ## 🧮 Why Does It Work? (Intuition + Math)
@@ -179,14 +179,17 @@ Perfect! Below is your **Fast & Slow Pointer Mastery Tracker**, now **organized 
 ---
 
 # 🎯 **Fast & Slow Pointer Mastery Tracker**
-*(Grouped by Data Structure → Sorted by Difficulty)*
+###  **Linked Lists**
 
-### 🔢 **Arrays**
-*(Treat array as an implicit linked list using values as pointers)*
+| #   | Problem Title                        | Pattern 🏷️              | Difficulty | Time ⏱️ | Space 💾 | Note 📝                                      |
+| --- | ------------------------------------ | ------------------------ | ---------- | ------- | -------- | -------------------------------------------- |
+| 1   | **Middle of the Linked List**        | 🐢➡️🐇 Fast & Slow       | Easy       | O(n)    | O(1)     | Fast moves 2x; slow lands at center.         |
+| 2   | **Linked List Cycle**                | 🐢➡️🐇 Cycle Detection   | Easy       | O(n)    | O(1)     | Detect if cycle exists.                      |
+| 3   | **Palindrome Linked List**           | 🐢➡️🐇 + Reverse         | Easy/Med   | O(n)    | O(1)     | Find mid → reverse second half → compare.    |
+| 4   | **Remove Nth Node From End of List** | 🐢➡️🐇 (Offset Pointers) | Medium     | O(n)    | O(1)     | Fast moves n steps ahead, then both advance. |
+| 5   | **Linked List Cycle II**             | 🐢➡️🐇 Floyd’s Algorithm | Medium     | O(n)    | O(1)     | Find the **start** node of the cycle.        |
+| 6   | **Reorder List**                     | 🐢➡️🐇 + Reverse + Merge | Medium     | O(n)    | O(1)     | L1→Ln→L2→Ln-1…: split, reverse, merge.       |
 
-| #   | Problem Title                 | Pattern 🏷️            | Difficulty | Time ⏱️   | Space 💾 | Note 📝                                        |
-| --- | ----------------------------- | ---------------------- | ---------- | --------- | -------- | ---------------------------------------------- |
-| 1   | **Happy Number**              | 🐢➡️🐇 Cycle Detection | Easy       | O(log n)* | O(1)     | Repeated digit-square sums form a cycle.       |
-| 2   | **Find the Duplicate Number** | 🐢➡️🐇 (Array as LL)   | Medium     | O(n)      | O(1)     | Use array values as "next" pointers (Floyd’s). |
+> *Time for Happy Number is per-iteration; total steps are bounded due to cycle detection.
 
 ---
