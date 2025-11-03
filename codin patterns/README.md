@@ -271,9 +271,9 @@ Absolutely! Here's a **clean, printable checklist-style table** that maps **Main
 
 | **Main Topic**               | **Sub-Pattern / Technique**                        | **Done?** |
 | ---------------------------- | -------------------------------------------------- | :-------: |
-| **Arrays & Strings**         | Two Pointers                                       |    🟡     |
-|                              | Sliding Window (Fixed & Variable)                  |     ☐     |
-|                              | Prefix / Cumulative Sum                            |     ☐     |
+| **Arrays & Strings**         | Two Pointers                                       |    🟢     |
+|                              | Sliding Window (Fixed & Variable)                  |    🟢     |
+|                              | Prefix / Cumulative Sum                            |    🟡     |
 |                              | Kadane’s Algorithm (Max Subarray)                  |     ☐     |
 |                              | Cyclic Sort                                        |     ☐     |
 |                              | In-Place Modification (Index-as-Hash, Negation)    |     ☐     |
