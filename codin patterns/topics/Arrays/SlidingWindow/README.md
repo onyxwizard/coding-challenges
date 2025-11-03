@@ -1,4 +1,4 @@
-# **Sliding Window** 🪟  
+# **Sliding Window** 🪟
 ### **The Dynamic Subarray/Substring Optimizer**
 
 The **Sliding Window** technique is a highly efficient strategy for solving problems that involve **contiguous subarrays or substrings** with specific constraints—such as maximum/minimum length, sum, distinct characters, or coverage of certain elements. By maintaining a "window" (a range between two pointers) that **expands and contracts dynamically**, we avoid redundant recomputation and achieve **linear or near-linear time complexity**.
@@ -16,29 +16,29 @@ This creates an **O(n)** solution because each element is visited **at most twic
 
 ### 🧩 **Types of Sliding Window**
 
-#### 1. **Fixed-Size Window** 📏  
+#### 1. **Fixed-Size Window** 📏
 - **Window size is constant** (e.g., “find max sum of any 3 consecutive elements”).
 - **How it works**: Move the window one step at a time; subtract the outgoing element and add the incoming one.
 - **Time**: O(n), **Space**: O(1)
 
 > ✅ **Example**:  
-> Array: `[2, 1, 5, 1, 3, 2]`, k = 3  
-> - Window 1: `[2,1,5]` → sum = 8  
-> - Window 2: `[1,5,1]` → sum = 7  
-> - Window 3: `[5,1,3]` → sum = 9 ← max  
+> Array: `[2, 1, 5, 1, 3, 2]`, k = 3
+> - Window 1: `[2,1,5]` → sum = 8
+> - Window 2: `[1,5,1]` → sum = 7
+> - Window 3: `[5,1,3]` → sum = 9 ← max
 > - Window 4: `[1,3,2]` → sum = 6  
-> → **Answer: 9**
+    > → **Answer: 9**
 
-#### 2. **Variable-Size (Dynamic) Window** 🌊  
+#### 2. **Variable-Size (Dynamic) Window** 🌊
 - **Window size changes** based on problem constraints.
 - Most common in interview problems.
 - Two subtypes:
-  - **Maximize window** under a constraint (e.g., “longest substring with ≤ K distinct chars”).
-  - **Minimize window** to satisfy a condition (e.g., “smallest substring containing all chars of T”).
+    - **Maximize window** under a constraint (e.g., “longest substring with ≤ K distinct chars”).
+    - **Minimize window** to satisfy a condition (e.g., “smallest substring containing all chars of T”).
 
 > ✅ **Example (Maximize)**:  
-> `"abcabcbb"`, no repeating chars → longest = `"abc"` → length = 3  
->  
+> `"abcabcbb"`, no repeating chars → longest = `"abc"` → length = 3
+>
 > ✅ **Example (Minimize)**:  
 > `s = "ADOBECODEBANC"`, `t = "ABC"` → min window = `"BANC"`
 
@@ -66,7 +66,7 @@ Ask yourself:
 
 ### 🧠 **Key Implementation Patterns**
 
-#### A. **Maximizing Window Size (Most Common)**  
+#### A. **Maximizing Window Size (Most Common)**
 **Goal**: Find the **longest** valid window.
 
 ```python
@@ -81,12 +81,12 @@ for right in range(n):
     best = max(best, right - left + 1)
 ```
 
-> ✅ **Used in**:  
-> - Longest Substring Without Repeating Characters  
-> - Longest Subarray with At Most K Zeros  
+> ✅ **Used in**:
+> - Longest Substring Without Repeating Characters
+> - Longest Subarray with At Most K Zeros
 > - Max Consecutive Ones III
 
-#### B. **Minimizing Window Size**  
+#### B. **Minimizing Window Size**
 **Goal**: Find the **smallest** window that satisfies a condition.
 
 ```python
@@ -104,11 +104,11 @@ for right in range(n):
 > ⚠️ **Tricky**: You must **check validity *before* shrinking**.  
 > Often requires a **counter or hashmap** to track coverage.
 
-> ✅ **Used in**:  
-> - Minimum Window Substring  
+> ✅ **Used in**:
+> - Minimum Window Substring
 > - Smallest Subarray with Sum ≥ Target
 
-#### C. **Fixed-Size Window (Simplest)**  
+#### C. **Fixed-Size Window (Simplest)**
 ```python
 window_sum = sum(arr[:k])
 max_sum = window_sum
@@ -117,8 +117,8 @@ for i in range(k, n):
     max_sum = max(max_sum, window_sum)
 ```
 
-> ✅ **Used in**:  
-> - Maximum Average Subarray I  
+> ✅ **Used in**:
+> - Maximum Average Subarray I
 > - Find All Anagrams in a String (with char count comparison)
 
 
@@ -142,48 +142,48 @@ for i in range(k, n):
 
 ## 🎯 **Sliding Window Mastery Tracker (Ordered by Type & Difficulty)**
 
-### 🔹 **I. Fixed-Size Window**  
+### 🔹 **I. Fixed-Size Window**
 *(Window length is constant — e.g., "subarray of size k")*
 
-| #   | Problem Title                          | Pattern 🏷️               | Difficulty | Status ✅ | Time ⏱️   | Space 💾 | Note 📝 |
+| #   | Problem Title                          | Pattern 🏷️               | Difficulty | Status  | Time ⏱️   | Space 💾 | Note 📝 |
 |-----|----------------------------------------|--------------------------|------------|:----------:|-----------|----------|--------|
-| 1   | Maximum Sum Subarray of Size K         | 🪟 Fixed-Size            | Easy       |            | **O(n)**  | **O(1)** | Classic intro: maintain running sum. |
-| 2   | Find All Anagrams in a String          | 🪟 Fixed-Size + Char Map | Medium     |            | **O(n)**  | **O(1)** | Compare char freq of window with `p` (use array[26]). |
-| 3   | Grumpy Bookstore Owner                 | 🪟 Fixed-Size (Max Gain) | Medium     |            | **O(n)**  | **O(1)** | Base satisfied + max extra from window of size X. |
-| 4   | Sliding Window Maximum                  | 🪟 Fixed-Size + Deque    | Hard       |            | **O(n)**  | **O(k)** | Use **monotonic decreasing deque** to track max. |
+| 1   | Maximum Sum Subarray of Size K         | 🪟 Fixed-Size            | Easy       |      ✅      | **O(n)**  | **O(1)** | Classic intro: maintain running sum. |
+| 2   | Find All Anagrams in a String          | 🪟 Fixed-Size + Char Map | Medium     |      ✅      | **O(n)**  | **O(1)** | Compare char freq of window with `p` (use array[26]). |
+| 3   | Grumpy Bookstore Owner                 | 🪟 Fixed-Size (Max Gain) | Medium     |      ✅      | **O(n)**  | **O(1)** | Base satisfied + max extra from window of size X. |
+| 4   | Sliding Window Maximum                  | 🪟 Fixed-Size + Deque    | Hard       |      ✅      | **O(n)**  | **O(k)** | Use **monotonic decreasing deque** to track max. |
 
 
 
-### 🔹 **II. Dynamic (Variable-Size) Window**  
+### 🔹 **II. Dynamic (Variable-Size) Window**
 *(Window expands/contracts based on constraints)*
 
-#### ➤ **A. Maximize Window Length**  
+#### ➤ **A. Maximize Window Length**
 *(Find the **longest** valid window)*
 
 | #   | Problem Title                                      | Pattern 🏷️                     | Difficulty | Status ✅ | Time ⏱️   | Space 💾     | Note 📝 |
 |-----|----------------------------------------------------|----------------------------------|------------|:----------:|-----------|--------------|--------|
-| 5   | Longest Substring Without Repeating Characters     | 🪟 Dynamic – Max (No Repeats)    | Medium     |            | **O(n)**  | **O(min(m,n))** | Shrink on duplicate; use set or map. |
-| 6   | Max Consecutive Ones III                           | 🪟 Dynamic – Max (Flip Budget)   | Medium     |            | **O(n)**  | **O(1)**     | Treat zeros as cost; allow ≤ K flips. |
-| 7   | Longest Substring with At Most K Distinct Chars    | 🪟 Dynamic – Max (Distinct ≤ K)  | Medium     |            | **O(n)**  | **O(K)**     | Shrink when `len(freq) > K`. |
-| 8   | Fruit Into Baskets                                 | 🪟 Dynamic – Max (K=2 Types)     | Medium     |            | **O(n)**  | **O(1)**     | Special case of #7 with K=2. |
-| 9   | Subarray Product Less Than K                       | 🪟 Dynamic – Max (Product < K)   | Medium     |            | **O(n)**  | **O(1)**     | **Watch**: if K ≤ 1, return 0. |
-| 10  | Longest Continuous Subarray with Abs Diff ≤ Limit  | 🪟 Dynamic – Max + Deque (Min/Max)| Medium     |            | **O(n)**  | **O(n)**     | Use **two deques** (min & max); shrink when `max - min > limit`. |
+| 5   | Longest Substring Without Repeating Characters     | 🪟 Dynamic – Max (No Repeats)    | Medium     |      ✅      | **O(n)**  | **O(min(m,n))** | Shrink on duplicate; use set or map. |
+| 6   | Max Consecutive Ones III                           | 🪟 Dynamic – Max (Flip Budget)   | Medium     |      ✅      | **O(n)**  | **O(1)**     | Treat zeros as cost; allow ≤ K flips. |
+| 7   | Longest Substring with At Most K Distinct Chars    | 🪟 Dynamic – Max (Distinct ≤ K)  | Medium     |      ✅      | **O(n)**  | **O(K)**     | Shrink when `len(freq) > K`. |
+| 8   | Fruit Into Baskets                                 | 🪟 Dynamic – Max (K=2 Types)     | Medium     |      ✅      | **O(n)**  | **O(1)**     | Special case of #7 with K=2. |
+| 9   | Subarray Product Less Than K                       | 🪟 Dynamic – Max (Product < K)   | Medium     |      ✅      | **O(n)**  | **O(1)**     | **Watch**: if K ≤ 1, return 0. |
+| 10  | Longest Continuous Subarray with Abs Diff ≤ Limit  | 🪟 Dynamic – Max + Deque (Min/Max)| Medium     |     ✅       | **O(n)**  | **O(n)**     | Use **two deques** (min & max); shrink when `max - min > limit`. |
 
-#### ➤ **B. Minimize Window Length**  
+#### ➤ **B. Minimize Window Length**
 *(Find the **smallest** window that satisfies a condition)*
 
-| #   | Problem Title                | Pattern 🏷️                   | Difficulty | Status ✅ | Time ⏱️   | Space 💾 | Note 📝 |
+| #   | Problem Title                | Pattern 🏷️                   | Difficulty | Status  | Time ⏱️   | Space 💾 | Note 📝 |
 |-----|------------------------------|------------------------------|------------|:----------:|-----------|----------|--------|
-| 11  | Minimum Size Subarray Sum    | 🪟 Dynamic – Min (Sum ≥ Target)| Medium     |            | **O(n)**  | **O(1)** | Shrink while `sum ≥ target`; update min length. |
-| 12  | Minimum Window Substring     | 🪟 Dynamic – Min (Coverage)   | Hard       |            | **O(n)**  | **O(m)** | Track `formed == required`; shrink when valid. |
+| 11  | Minimum Size Subarray Sum    | 🪟 Dynamic – Min (Sum ≥ Target)| Medium     |     ✅       | **O(n)**  | **O(1)** | Shrink while `sum ≥ target`; update min length. |
+| 12  | Minimum Window Substring     | 🪟 Dynamic – Min (Coverage)   | Hard       |     ✅       | **O(n)**  | **O(m)** | Track `formed == required`; shrink when valid. |
 
-#### ➤ **C. Count Valid Windows**  
+#### ➤ **C. Count Valid Windows**
 *(Count how many windows satisfy a condition)*
 
 | #   | Problem Title                          | Pattern 🏷️                     | Difficulty | Status ✅ | Time ⏱️   | Space 💾 | Note 📝 |
 |-----|----------------------------------------|----------------------------------|------------|:----------:|-----------|----------|--------|
-| 13  | Number of Substrings Containing All 3 Chars | 🪟 Dynamic – Counting         | Medium     |            | **O(n)**  | **O(1)** | For each `right`, count valid `left` positions. |
-| 14  | Count Number of Nice Subarrays         | 🪟 Dynamic – Exact K → AtMost(K) - AtMost(K-1) | Medium |      | **O(n)**  | **O(1)** | Transform exact-K into two "at most" passes. |
+| 13  | Number of Substrings Containing All 3 Chars | 🪟 Dynamic – Counting         | Medium     |     ✅       | **O(n)**  | **O(1)** | For each `right`, count valid `left` positions. |
+| 14  | Count Number of Nice Subarrays         | 🪟 Dynamic – Exact K → AtMost(K) - AtMost(K-1) | Medium |   ✅   | **O(n)**  | **O(1)** | Transform exact-K into two "at most" passes. |
 
 
 
@@ -202,13 +202,13 @@ for i in range(k, n):
 ### 🧠 **Study Flow Recommendation**
 
 1. **Fixed-Size (Easy → Hard)**  
-   → #1 → #2 → #3 → #4  
+   → #1 → #2 → #3 → #4
 2. **Dynamic – Maximize**  
-   → #5 (most fundamental) → #6, #7, #8 → #9 → #10  
+   → #5 (most fundamental) → #6, #7, #8 → #9 → #10
 3. **Dynamic – Minimize**  
-   → #11 → #12  
+   → #11 → #12
 4. **Dynamic – Counting**  
-   → #13 → #14  
+   → #13 → #14
 
 This order ensures you:
 - Master **window movement** before **complex state logic**
@@ -237,8 +237,8 @@ This order ensures you:
 2. **Iterate** `right` from `0` to `n-1`.
 3. **Add** `arr[right]` to window (update data structure).
 4. **While** window is **invalid** (for max problems) or **valid** (for min problems):
-   - Update answer if needed.
-   - **Remove** `arr[left]` and increment `left`.
+    - Update answer if needed.
+    - **Remove** `arr[left]` and increment `left`.
 5. **Return** best result.
 
 > 🚨 **Edge Cases**:
@@ -260,19 +260,19 @@ This order ensures you:
 ---
 ### 🧠 **Advanced Variants**
 
-#### 1. **Sliding Window + Binary Search**  
+#### 1. **Sliding Window + Binary Search**
 - When window condition is **monotonic** (e.g., “is there a subarray of length L with sum ≥ X?”).
 - Binary search on answer (length), use sliding window to verify.
 
 > Example: *Maximum Average Subarray II* (hard)
 
-#### 2. **Sliding Window + Two Heaps / Deque**  
+#### 2. **Sliding Window + Two Heaps / Deque**
 - For problems needing **min/max in current window**.
 - Standard sliding window isn’t enough → need **monotonic queue**.
 
 > Example: *Sliding Window Maximum*
 
-#### 3. **Multi-Constraint Windows**  
+#### 3. **Multi-Constraint Windows**
 - Window must satisfy **multiple conditions** (e.g., “at most K distinct AND length ≥ L”).
 - Combine logic in `is_valid()` check.
 
@@ -304,14 +304,14 @@ This order ensures you:
 
 > ✅ Master these 8, and you’ll handle **95%** of sliding window interview questions. -->
 
----
+
 
 ### 💡 **Key Insight to Remember**
 
 > **Sliding Window is greedy + incremental**:  
 > It assumes that **once a window becomes invalid, all larger windows starting at the same `left` are also invalid** (for minimization), or that **we can safely extend until invalid** (for maximization). This **monotonicity** is what makes it work.
 
----
+
 
 ### 🚀 Final Thought
 
