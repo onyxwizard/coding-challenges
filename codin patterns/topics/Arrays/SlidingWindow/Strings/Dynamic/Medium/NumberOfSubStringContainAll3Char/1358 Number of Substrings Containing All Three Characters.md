@@ -24,6 +24,24 @@ Constraints:
     3 <= s.length <= 5 x 10^4
     s only consists of a, b or c characters.
 
+## 🔢 Simple Math Idea:
+
+Instead of checking every substring (there could be thousands!), we use this key observation:
+
+    Once a substring has all three letters ('a', 'b', 'c'), then adding more letters to the right will still keep all three. 
+
+
+So, if a substring starting at position i first gets all three letters when it ends at position j, then:
+
+    s[left..right] ✅  
+    s[left..right+1] ✅  
+    s[left..right+2] ✅  
+    ...  
+    s[left..n-1] ✅
+
+
+That’s **`n - right`** valid substrings starting at left.
+
 ```java
 public class NumberOfSubstringsContainingAllThreeChars {
 
