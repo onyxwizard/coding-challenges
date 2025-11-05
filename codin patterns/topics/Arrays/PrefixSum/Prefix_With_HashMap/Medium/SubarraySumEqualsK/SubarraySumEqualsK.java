@@ -1,4 +1,4 @@
-package PrefixSum.Basic_Prefix_Sum.Medium.SubarraySumEqualsK;
+package PrefixSum.Prefix_With_HashMap.Medium.SubarraySumEqualsK;
 
 import java.util.*;
 
