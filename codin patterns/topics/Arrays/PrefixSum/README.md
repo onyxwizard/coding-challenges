@@ -21,7 +21,7 @@ sum(i, j) = prefix[j + 1] - prefix[i]
 
 This turns **range sum queries** into **constant-time operations**.
 
-✅ **Key Insight**:  
+✅ **Key Insight**:
 > _“Don’t recompute what you can remember.”_  
 > Prefix sum trades **O(n)** extra space for massive time savings across repeated or nested subarray operations.
 
@@ -33,8 +33,8 @@ This turns **range sum queries** into **constant-time operations**.
 
 - **How it works**: Build `prefix` once; answer any `sum(i, j)` in O(1).
 - **Use cases**:
-  - Range sum queries (LeetCode: *Range Sum Query - Immutable*)
-  - Subarray sum equals K (optimized with hash map—see below)
+    - Range sum queries (LeetCode: *Range Sum Query - Immutable*)
+    - Subarray sum equals K (optimized with hash map—see below)
 - **Example**:
   ```python
   arr = [1, 2, 3, 4, 5]
@@ -49,9 +49,9 @@ This turns **range sum queries** into **constant-time operations**.
   If `prefix[j] - prefix[i] = K`, then `prefix[i] = prefix[j] - K`.  
   So at each step `j`, check if `prefix[j] - K` exists in the map.
 - **Use cases**:
-  - *Subarray Sum Equals K*
-  - *Contiguous Array* (treat 0 as -1, find subarray with sum 0)
-  - *Find Pivot Index* (left sum == right sum → use total sum and prefix)
+    - *Subarray Sum Equals K*
+    - *Contiguous Array* (treat 0 as -1, find subarray with sum 0)
+    - *Find Pivot Index* (left sum == right sum → use total sum and prefix)
 - **Time**: O(n), **Space**: O(n)
 
 ✅ **Example**:  
@@ -76,20 +76,20 @@ At index 3 (prefix=3), look for `3 - 2 = 1` → seen once → count += 1
                         + prefix[r1][c1]
   ```
 - **Use cases**:
-  - *Range Sum Query 2D - Immutable*
-  - *Max Sum of Rectangle No Larger Than K* (combined with sorted sets)
+    - *Range Sum Query 2D - Immutable*
+    - *Max Sum of Rectangle No Larger Than K* (combined with sorted sets)
 
 
 #### 4. **Difference Array (Range Update + Point Query)** ➕➖
 
 - **How it works**: For **range increment/decrement** operations (e.g., “add 5 to all elements from i to j”), use a **difference array**:
-  - `diff[i] += val`, `diff[j+1] -= val`
-  - Final array = prefix sum of `diff`
+    - `diff[i] += val`, `diff[j+1] -= val`
+    - Final array = prefix sum of `diff`
 - **Why it works**: Lazy propagation of updates; reconstruct actual array in O(n).
 - **Use cases**:
-  - *Corporate Flight Bookings*
-  - *Car Pooling*
-  - *Range Addition*
+    - *Corporate Flight Bookings*
+    - *Car Pooling*
+    - *Range Addition*
 
 ✅ **Example**:  
 Apply `+10` to indices [1, 3] in array of size 5:  
@@ -176,20 +176,20 @@ Are you updating ranges? ──Yes──→ Difference array → prefix sum.
 
 ### 🎯 Prefix Sum Mastery Tracker
 
-| # | Problem Title                              | Pattern 🏷️                     | Difficulty | Status ✅ | Time ⏱️   | Space 💾 | Note 📝 |
+| # | Problem Title                              | Pattern 🏷️                     | Difficulty | Status  | Time ⏱️   | Space 💾 | Note 📝 |
 |---|--------------------------------------------|-------------------------------|------------|:----------:|----------|----------|--------|
 | 1 | Running Sum of 1d Array                    | Basic Prefix                  | Easy       |   ✅    | O(n)     | O(1)*    | In-place or new array |
-| 2 | Range Sum Query - Immutable                | Basic Prefix                  | Easy       |        | O(n)/O(1)| O(n)     | Classic range query |
-| 3 | Subarray Sum Equals K                      | Prefix + Hash Map             | Medium     |       | O(n)     | O(n)     | Initialize map with {0:1} |
-| 4 | Contiguous Array                           | Prefix + Hash Map (0→-1)      | Medium     |       | O(n)     | O(n)     | Max length subarray with equal 0s/1s |
-| 5 | Find Pivot Index                           | Prefix + Total Sum            | Easy       |        | O(n)     | O(1)     | leftSum == total - leftSum - arr[i] |
-| 6 | Left and Right Sum Differences             | Prefix / Suffix               | Easy       |        | O(n)     | O(1)     | Compute left/right sums |
-| 7 | Subarray Sums Divisible by K               | Prefix + Modulo + Hash Map    | Medium     |        | O(n)     | O(K)     | Handle negative mod! |
-| 8 | Minimum Size Subarray Sum                  | Prefix + Binary Search        | Medium     |         | O(n log n)| O(n)     | Or use sliding window (better) |
-| 9 | Maximum Size Subarray Sum Equals K         | Prefix + Hash Map             | Medium     |         | O(n)     | O(n)     | Track first occurrence of prefix |
-|10 | Range Sum Query 2D - Immutable             | 2D Prefix Sum                 | Medium     |         | O(mn)/O(1)| O(mn)    | 2D extension |
-|11 | Corporate Flight Bookings                  | Difference Array              | Medium     |        | O(n)     | O(n)     | Apply range updates, then prefix |
-|12 | Car Pooling                                | Difference Array (timeline)   | Medium     |         | O(n)     | O(1001)  | Use fixed-size diff array |
+| 2 | Range Sum Query - Immutable                | Basic Prefix                  | Easy       |   ✅    | O(n)/O(1)| O(n)     | Classic range query |
+| 3 | Subarray Sum Equals K                      | Prefix + Hash Map             | Medium     |  ✅   | O(n)     | O(n)     | Initialize map with {0:1} |
+| 4 | Contiguous Array                           | Prefix + Hash Map (0→-1)      | Medium     |  ✅   | O(n)     | O(n)     | Max length subarray with equal 0s/1s |
+| 5 | Find Pivot Index                           | Prefix + Total Sum            | Easy       |  ✅    | O(n)     | O(1)     | leftSum == total - leftSum - arr[i] |
+| 6 | Left and Right Sum Differences             | Prefix / Suffix               | Easy       |  ✅    | O(n)     | O(1)     | Compute left/right sums |
+| 7 | Subarray Sums Divisible by K               | Prefix + Modulo + Hash Map    | Medium     |  ✅    | O(n)     | O(K)     | Handle negative mod! |
+| 8 | Minimum Size Subarray Sum                  | Prefix + Binary Search        | Medium     |  ✅     | O(n log n)| O(n)     | Or use sliding window (better) |
+| 9 | Maximum Size Subarray Sum Equals K         | Prefix + Hash Map             | Medium     |  ✅     | O(n)     | O(n)     | Track first occurrence of prefix |
+|10 | Range Sum Query 2D - Immutable             | 2D Prefix Sum                 | Medium     |  ✅     | O(mn)/O(1)| O(mn)    | 2D extension |
+|11 | Corporate Flight Bookings                  | Difference Array              | Medium     |  ✅    | O(n)     | O(n)     | Apply range updates, then prefix |
+|12 | Car Pooling                                | Difference Array (timeline)   | Medium     |  ✅     | O(n)     | O(1001)  | Use fixed-size diff array |
 
 > *O(1) space if modifying input; O(n) if returning new array.
 
@@ -205,4 +205,4 @@ Are you updating ranges? ──Yes──→ Difference array → prefix sum.
 | 2D matrix region sum                         | 2D Prefix Sum                 | Extend 1D logic to grid |
 | Find balance point (e.g., pivot index)       | Prefix vs Total Sum           | Left sum = right sum |
 
-✅ **Total Core Problems**: 12 (0 solved above)  
+✅ **Total Core Problems**: 12 (12 solved above)  
