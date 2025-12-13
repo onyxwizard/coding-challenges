@@ -307,13 +307,13 @@ public int[] maxSubArrayWithIndices(int[] nums) {
 | --- | ------------------------------------- | -------------------------- | ---------- | :-----: | ----------- | -------- | ---------------------------------- |
 | 1   | Maximum Subarray                      | Classic Kadane’s           | Easy       |    ✅    | O(n)        | O(1)     | LeetCode #53                       |
 | 2   | Maximum Product Subarray              | Kadane’s (Product)         | Medium     |    ✅    | O(n)        | O(1)     | Track min & max                    |
-| 3   | Maximum Sum Circular Subarray         | Circular Kadane’s          | Medium     |         | O(n)        | O(1)     | total - min_subarray               |
-| 4   | Best Time to Buy and Sell Stock       | Kadane’s (Diff Array)      | Easy       |         | O(n)        | O(1)     | Max profit = max subarray of diffs |
-| 5   | Maximum Absolute Subarray Sum         | Kadane’s + Min/Max         | Hard       |         | O(n)        | O(1)     | Rare variant                       |
-| 6   | Max Sum of Rectangle No Larger Than K | 2D + Kadane’s + BST        | Hard       |         | O(n³ log n) | O(n)     | Advanced                           |
-| 7   | Maximum Subarray Min-Product          | Kadane’s + Monotonic Stack | Medium     |         | O(n)        | O(n)     | Combine with next greater element  |
-| 8   | Largest Subarray Length with Sum = K  | Prefix + Hash Map          | Medium     |         | O(n)        | O(n)     | Not Kadane’s—don’t confuse!        |
-| 9   | Maximum Average Subarray I            | Sliding Window             | Easy       |         | O(n)        | O(1)     | Fixed size → not Kadane’s          |
+| 3   | Maximum Sum Circular Subarray         | Circular Kadane’s          | Medium     |    ✅    | O(n)        | O(1)     | total - min_subarray               |
+| 4   | Best Time to Buy and Sell Stock       | Kadane’s (Diff Array)      | Easy       |    ✅   | O(n)        | O(1)     | Max profit = max subarray of diffs |
+| 5   | Maximum Absolute Subarray Sum         | Kadane’s + Min/Max         | Hard       |    ✅   | O(n)        | O(1)     | Rare variant                       |
+| 6   | Max Sum of Rectangle No Larger Than K | 2D + Kadane’s + BST        | Hard       |    ✅    | O(n³ log n) | O(n)     | Advanced                           |
+| 7   | Maximum Subarray Min-Product          | Kadane’s + Monotonic Stack | Medium     |    ✅    | O(n)        | O(n)     | Combine with next greater element  |
+| 8   | Largest Subarray Length with Sum = K  | Prefix + Hash Map          | Medium     |    ✅    | O(n)        | O(n)     | Not Kadane’s—don’t confuse!        |
+| 9   | Maximum Average Subarray I            | Sliding Window             | Easy       |    ✅    | O(n)        | O(1)     | Fixed size → not Kadane’s          |
 | 10  | Flip String to Monotone Increasing    | DP (Kadane-like)           | Medium     |         | O(n)        | O(1)     | Min flips = min cost to split      |
 
 > 🔸 **Note**: Problems like #8 and #9 **are not Kadane’s**—they test your ability to **distinguish** between patterns.
